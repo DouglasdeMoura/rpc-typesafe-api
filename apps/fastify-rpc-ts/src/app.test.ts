@@ -1,7 +1,9 @@
-import { describe, it } from 'vitest'
+import { describe, it, vi } from 'vitest'
 import assert from 'node:assert'
-import { app } from './app.js'
+import { app } from './app'
+import * as procedures from './procedures'
 
+const spyGetTarefas = vi.spyOn(procedures, 'getTarefas')
 const server = app()
 
 describe('POST /rpc', () => {
@@ -35,12 +37,15 @@ describe('POST /rpc', () => {
   })
 
   it('deve retornar erro 500 quando ocorrer um erro na procedure', async () => {
+    spyGetTarefas.mockImplementationOnce(() => {
+      throw new Error('Ocorreu um erro.')
+    })
 
     const response = await server.inject({
       method: 'POST',
       url: '/rpc',
       payload: {
-        procedure: 'error',
+        procedure: 'getTarefas',
       },
     })
 

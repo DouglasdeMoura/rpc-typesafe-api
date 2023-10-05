@@ -1,6 +1,6 @@
 import { describe, it } from 'vitest'
 import assert from 'node:assert'
-import { tarefas, getTarefas, getTarefa, addTarefa, updateTarefa, deleteTarefa } from './procedures.js'
+import { tarefas, getTarefas, getTarefa, addTarefa, updateTarefa, deleteTarefa } from './procedures'
 
 describe('getTarefas', () => {
   it('deve retornar todas as tarefas', () => {
@@ -43,7 +43,7 @@ describe('addTarefa', () => {
     const result = addTarefa('Tarefa 4')
 
     assert.strictEqual(result.status, 201)
-    assert.strictEqual(result.data.id, 4)
+    assert.strictEqual(result.data?.id, 4)
     assert.strictEqual(tarefas.length, 4)
     assert.strictEqual(tarefas[3].title, 'Tarefa 4')
   })
