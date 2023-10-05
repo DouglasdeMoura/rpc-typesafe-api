@@ -1,0 +1,17 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "jit src/index.ts",
+    "dev": "jiti src/index.ts --watch",
+    "test": "vitest"
+  },
+  "author": "Douglas Moura <hello@douglasmoura.dev>",
+  "license": "MIT",
+  "devDependencies": {
+    "vitest": "^0.34.6"
+  }
+}

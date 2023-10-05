@@ -1,6 +1,6 @@
 import Fastify from 'fastify'
-import * as procedures from './procedures.js'
-import { ProcedureError } from './errors.js'
+import * as procedures from './procedures'
+import { ProcedureError } from './errors'
 
 export const app = () => {
   const fastify = Fastify()
