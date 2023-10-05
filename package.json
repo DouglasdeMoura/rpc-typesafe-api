@@ -1,4 +1,5 @@
 {
+  "name": "rpc-typesafe-api",
   "private": true,
   "scripts": {
     "build": "turbo run build",
@@ -9,7 +10,6 @@
     "stylomatic": "^0.7.0",
     "turbo": "latest"
   },
-  "name": "typesafe-apis",
   "packageManager": "npm@9.6.7",
   "workspaces": [
     "apps/*",
