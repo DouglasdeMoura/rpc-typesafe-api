@@ -25,7 +25,7 @@ export const app = () => {
       const response = procedure?.(req.body.args)
       return res.status(response?.status || 200).send(response?.data)
     } catch (error) {
-      return res.status(error?.status || 500).send({
+      return res.status(error?.code || 500).send({
         title: error?.title || 'Erro',
         details: error?.message || 'Ocorreu um erro.'
       })
