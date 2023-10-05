@@ -99,3 +99,7 @@ export const deleteTarefa = (id) => {
     status: 204,
   }
 }
+
+export const error = () => {
+  throw new ProcedureError('Ocorreu um erro.', 500)
+}
