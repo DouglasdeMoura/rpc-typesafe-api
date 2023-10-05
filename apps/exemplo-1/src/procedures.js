@@ -6,7 +6,7 @@ class ProcedureError extends Error {
   }
 }
 
-let tarefas = [
+export let tarefas = [
   {
     id: 1,
     title: 'Tarefa 1',
