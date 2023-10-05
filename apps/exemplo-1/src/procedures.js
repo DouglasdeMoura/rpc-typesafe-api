@@ -64,18 +64,18 @@ export const addTarefa = (title) => {
   }
 }
 
-export const updateTarefa = (id, title) => {
-  if (!id || !title) {
+export const updateTarefa = (args) => {
+  if (!args?.id || !args?.title) {
     throw new ProcedureError('O id e o título são obrigatórios', 400, 'Faltam parâmetros obrigatórios')
   }
 
-  const index = tarefas.findIndex((todo) => todo.id === id)
+  const index = tarefas.findIndex((todo) => todo.id === args.id)
 
   if (index === -1) {
-    throw new ProcedureError(`Tarefa ${id} não encontrada`, 404)
+    throw new ProcedureError(`Tarefa ${args.id} não encontrada`, 404)
   }
 
-  tarefas[index].title = title
+  tarefas[index].title = args.title
 
   return {
     status: 200,

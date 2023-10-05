@@ -58,12 +58,12 @@ describe('updateTarefa', () => {
 
   it('deve lançar um erro se a tarefa não for encontrada', () => {
     assert.throws(() => {
-      updateTarefa(10, 'Tarefa 10')
+      updateTarefa({ id: 10, title: 'Tarefa 10' })
     }, Error('Tarefa 10 não encontrada'))
   })
 
   it('deve atualizar a tarefa com o id fornecido', () => {
-    const result = updateTarefa(2, 'Nova Tarefa')
+    const result = updateTarefa({ id: 2, title: 'Nova Tarefa' })
 
     assert.strictEqual(result.status, 200)
     assert.strictEqual(tarefas[1].title, 'Nova Tarefa')
