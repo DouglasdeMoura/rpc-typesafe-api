@@ -13,7 +13,7 @@ fastify.post('/rpc', async (req, res) => {
 
   const procedure = await procedures[req.body.procedure]
 
-  if (!procedure) {
+  if (!procedure || typeof procedure !== 'function') {
     return res.status(404).send({
       title: 'Procedure não encontrada',
       details: `A procedure ${req.body.procedure} não foi encontrada.`
