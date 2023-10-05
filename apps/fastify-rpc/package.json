@@ -1,5 +1,5 @@
 {
-  "name": "exemplo-1",
+  "name": "fastify-rpc",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
