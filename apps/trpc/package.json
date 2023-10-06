@@ -1,0 +1,24 @@
+{
+  "name": "trpc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "jiti src/server.ts",
+    "dev": "jiti src/server.ts --watch",
+    "test": "vitest"
+  },
+  "author": "Douglas Moura <hello@douglasmoura.dev>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.8.2",
+    "jiti": "^1.20.0",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.6"
+  },
+  "dependencies": {
+    "@trpc/server": "^10.40.0",
+    "fastify": "^4.23.2",
+    "zod": "^3.22.4"
+  }
+}
